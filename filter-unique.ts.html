@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -79,36 +79,36 @@
 <a name='L14'></a><a href='#L14'>14</a>
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
-<a name='L17'></a><a href='#L17'>17</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L17'></a><a href='#L17'>17</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">58x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const <span class="cstat-no" title="statement not covered" >filterUnique </span>= <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(a</span>rr: Array&lt;any&gt;) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  return arr.filter(<span class="fstat-no" title="function not covered" >(i</span>tem, index) =&gt; {</span>
-    const value = <span class="cstat-no" title="statement not covered" >(item as string).trim();</span>
-<span class="cstat-no" title="statement not covered" >    return value !== '' &amp;&amp; arr.map(<span class="fstat-no" title="function not covered" >(i</span>tem: string) =&gt; <span class="cstat-no" title="statement not covered" >item.trim()).i</span>ndexOf(value) === index;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const filterUnique = (arr: Array&lt;any&gt;) =&gt; {
+  return arr.filter((item, index) =&gt; {
+    const value = (item as string).trim();
+    return value !== '' &amp;&amp; arr.map((item: string) =&gt; item.trim()).indexOf(value) === index;
   });
 };
 &nbsp;
 &nbsp;
-export const <span class="cstat-no" title="statement not covered" >filterUniqueObjects:</span> &lt;T extends { [key: string]: any }&gt;(
+export const filterUniqueObjects: &lt;T extends { [key: string]: any }&gt;(
   arr: Array&lt;T&gt;,
   key: string
-) =&gt; Array&lt;T&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(a</span>rr, key) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  return arr.filter(<span class="fstat-no" title="function not covered" >(i</span>tem, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return arr.map(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; <span class="cstat-no" title="statement not covered" >item[key] </span>as string).indexOf(item[key]) === index;</span>
+) =&gt; Array&lt;T&gt; = (arr, key) =&gt; {
+  return arr.filter((item, index) =&gt; {
+    return arr.map((item) =&gt; item[key] as string).indexOf(item[key]) === index;
   });
 };
 &nbsp;</pre></td></tr></table></pre>
@@ -118,7 +118,7 @@ export const <span class="cstat-no" title="statement not covered" >filterUniqueO
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-26T10:36:50.795Z
+                at 2025-03-28T07:55:33.246Z
             </div>
         <script src="prettify.js"></script>
         <script>
